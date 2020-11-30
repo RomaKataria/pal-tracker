@@ -8,3 +8,11 @@ applications:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
     services:
       - tracker-database
+    buildpacks:
+      - java_buildpack_offline
+    stack: cflinuxfs3
+    memory: 1G
+    disk_quota: 1G
+    instances: 1
+    health-check-type: port
+    timeout: 60
